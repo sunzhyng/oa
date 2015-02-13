@@ -23,8 +23,9 @@ public class MyInterceptor extends HandlerInterceptorAdapter {
 		System.out.println(request.getContentType() + "-----"
 				+ request.getCharacterEncoding() + "------"
 				+ request.getContextPath());
-		System.out.println("MyInterceptor.postHandle()---viewName:"
-				+ modelAndView.getViewName());
+		if (modelAndView != null)
+			System.out.println("MyInterceptor.postHandle()---viewName:"
+					+ modelAndView.getViewName());
 		super.postHandle(request, response, handler, modelAndView);
 	}
 

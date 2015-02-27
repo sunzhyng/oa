@@ -19,7 +19,6 @@ public class MyInterceptor extends HandlerInterceptorAdapter {
 	public void postHandle(HttpServletRequest request,
 			HttpServletResponse response, Object handler,
 			ModelAndView modelAndView) throws Exception {
-
 		System.out.println(request.getContentType() + "-----"
 				+ request.getCharacterEncoding() + "------"
 				+ request.getContextPath());
@@ -32,11 +31,8 @@ public class MyInterceptor extends HandlerInterceptorAdapter {
 	@Override
 	public boolean preHandle(HttpServletRequest request,
 			HttpServletResponse response, Object handler) throws Exception {
-
 		String url = request.getRequestURI();
-
 		System.out.println("MyInterceptor.preHandle()" + url);
-
 		return super.preHandle(request, response, handler);
 	}
 }

@@ -2,7 +2,7 @@ package net.icocoa.oa.po;
 
 import java.io.Serializable;
 
-public class User implements Serializable {
+public class Test implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private Integer id;
@@ -33,7 +33,7 @@ public class User implements Serializable {
 		this.age = age;
 	}
 
-	public User() {
+	public Test() {
 	}
 
 }

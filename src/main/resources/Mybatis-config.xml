@@ -4,9 +4,9 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias type="net.icocoa.oa.po.User" alias="User" />
+		<typeAlias type="net.icocoa.oa.po.Test" alias="Test" />
 	</typeAliases>
 	<mappers>
-		<mapper resource="net/icocoa/oa/mapper/userMapper.xml" />
+		<mapper resource="net/icocoa/oa/mapper/testMapper.xml" />
 	</mappers>
 </configuration>

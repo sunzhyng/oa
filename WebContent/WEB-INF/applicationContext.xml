@@ -13,9 +13,9 @@
 	<!-- database -->
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 		<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
-		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/blog"></property>
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/oa"></property>
 		<property name="user" value="root"></property>
-		<property name="password" value=""></property>
+		<property name="password" value="123456"></property>
 	</bean>
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="configLocation" value="classpath:Mybatis-config.xml"></property>

@@ -5,8 +5,8 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import net.icocoa.oa.po.User;
-import net.icocoa.oa.service.UserService;
+import net.icocoa.oa.po.Test;
+import net.icocoa.oa.service.TestService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,13 +15,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class Test {
+public class TestController {
 
 	@Autowired
 	private HttpServletRequest request;
 
 	@Autowired
-	private UserService userService;
+	private TestService testService;
 
 	@RequestMapping(value = "/baidu")
 	public String baidu() {
@@ -47,7 +47,7 @@ public class Test {
  
 	@RequestMapping(value = "/us")
 	public String us() {
-		User u = userService.findById("1");
+		Test u = testService.findById("1");
 		System.out.println("user = " + u.getName());
 		// return "";
 		// return "redirect:http://www.baidu.com/";
@@ -56,10 +56,10 @@ public class Test {
 
 	@RequestMapping(value = "/in")
 	public String in() {
-		User u = new User();
+		Test u = new Test();
 		u.setName("Bok");
 		u.setAge(9);
-		userService.insert(u);
+		testService.insert(u);
 		System.out.println("user = " + u.getId() + ":" + u.getName());
 		// return "";
 		// return "redirect:http://www.baidu.com/";

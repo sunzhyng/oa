@@ -21,11 +21,12 @@
 		<property name="configLocation" value="classpath:Mybatis-config.xml"></property>
 		<property name="dataSource" ref="dataSource" />
 	</bean>
+
 	<!-- scan mapper Interface to MapperFactoryBean -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="net.icocoa.oa.dao" />
 	</bean>
-	
+
 	<!-- transaction -->
 	<bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

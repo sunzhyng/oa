@@ -34,8 +34,18 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>3.2.4.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-web</artifactId>
-			<version>3.2.3.RELEASE</version>
+			<version>3.2.4.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId> 
+			<artifactId>spring-security-config</artifactId>
+			<version>3.2.4.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
@@ -85,5 +95,22 @@
 	</dependencies>
 	<build>
 		<finalName>oa</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+
+		</plugins>
 	</build>
 </project>

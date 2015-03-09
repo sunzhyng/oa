@@ -12,12 +12,10 @@ public class TestServiceImpl implements TestService {
 	@Autowired
 	private TestDao testDao;
 
-	@Override
 	public Test findById(String Id) {
 		return testDao.findById(Id);
 	}
 
-	@Override
 	public void insert(Test u) {
 		testDao.insert(u);
 	}

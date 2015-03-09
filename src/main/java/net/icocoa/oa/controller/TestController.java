@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class TestController {
+public class TestController extends BaseController {
 
 	@Autowired
 	private HttpServletRequest request;

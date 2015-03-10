@@ -1,8 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<!DOCTYPE html>
 <html>
 <body>
-    <h1>Message : ${message}</h1>  
+
+    <h3>Message : ${message}</h3>	
+	<h3>Username : ${username}</h3>	
+	
+	<a href="${pageContext.request.contextPath}/j_spring_security_logout"> Logout</a>
 </body>
 </html>

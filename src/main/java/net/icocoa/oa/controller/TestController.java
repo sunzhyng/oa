@@ -9,6 +9,8 @@ import net.icocoa.oa.po.Test;
 import net.icocoa.oa.service.TestService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -25,10 +27,11 @@ public class TestController extends BaseController {
 
 	@RequestMapping(value = "/baidu")
 	public String baidu() {
-
-		System.out.println("n=" + request.getParameter("n"));
-		// return "";
-		// return "redirect:http://www.baidu.com/";
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		String name = auth.getName();
+		
+		logger.debug("n=" + request.getParameter("n"));
+		logger.debug("loged name=" + name);
 		return "forward:/mv";
 	}
 
@@ -48,9 +51,7 @@ public class TestController extends BaseController {
 	@RequestMapping(value = "/us")
 	public String us() {
 		Test u = testService.findById("1");
-		System.out.println("user = " + u.getName());
-		// return "";
-		// return "redirect:http://www.baidu.com/";
+		logger.debug("user = " + u.getName());
 		return "forward:/mv";
 	}
 
@@ -60,9 +61,7 @@ public class TestController extends BaseController {
 		u.setName("Bok");
 		u.setAge(9);
 		testService.insert(u);
-		System.out.println("user = " + u.getId() + ":" + u.getName());
-		// return "";
-		// return "redirect:http://www.baidu.com/";
+		logger.debug("user = " + u.getId() + ":" + u.getName());
 		return "forward:/mv";
 	}
 }

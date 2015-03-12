@@ -10,14 +10,14 @@
 
 	<mvc:annotation-driven />
 	<context:component-scan base-package="net.icocoa.oa.controller,net.icocoa.oa.service" />
-
+	
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/*" />
 			<bean class="net.icocoa.oa.MyInterceptor"></bean>
 		</mvc:interceptor>
 	</mvc:interceptors>
-
+	
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">

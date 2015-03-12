@@ -33,4 +33,9 @@ public class LoginController {
 	public String logout(ModelMap model) {
 		return "login";
 	}
+	
+	@RequestMapping(value = "/denied", method = RequestMethod.GET)
+	public String forbid(ModelMap model) {
+		return "403";
+	}
 }

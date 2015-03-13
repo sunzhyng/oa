@@ -12,7 +12,7 @@
 		<access-denied-handler ref="accessDeniedHandler" />
 		<form-login login-page="/login" default-target-url="/welcome" authentication-failure-url="/login?login_error" />
 		<logout logout-success-url="/logout" />
-		<remember-me />
+		<remember-me key="oa_security" />
 		<custom-filter ref="myFilter" before="FILTER_SECURITY_INTERCEPTOR"/> 
 	</http>
 	
@@ -24,6 +24,7 @@
              </password-encoder>
 		</authentication-provider>
 	</authentication-manager>
+	
 	<beans:bean id="myUserDetailService" class="net.icocoa.oa.service.MyBatisUserDetailService">
 		<beans:property name="userCache" ref="userCache"/>
 	</beans:bean>

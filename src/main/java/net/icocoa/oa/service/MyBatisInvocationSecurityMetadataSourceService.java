@@ -10,6 +10,7 @@ import java.util.Map;
 import net.icocoa.oa.dao.ResourceDaoImpl;
 import net.icocoa.oa.po.SysResource;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.ConfigAttribute;
 import org.springframework.security.access.SecurityConfig;
@@ -18,6 +19,8 @@ import org.springframework.security.web.access.intercept.FilterInvocationSecurit
 
 public class MyBatisInvocationSecurityMetadataSourceService implements FilterInvocationSecurityMetadataSource {
 
+	private Logger logger = Logger.getLogger(this.getClass());
+	
 	@Autowired
 	private ResourceDaoImpl resourcesDao;
 
@@ -25,7 +28,7 @@ public class MyBatisInvocationSecurityMetadataSourceService implements FilterInv
 
 	public MyBatisInvocationSecurityMetadataSourceService(ResourceDaoImpl resourcesDao) {
 		this.resourcesDao = resourcesDao;
-		System.out.println("加载MyInvocationSecurityMetadataSourceService..." + resourcesDao);
+		logger.debug("加载MyInvocationSecurityMetadataSourceService..." + resourcesDao);
 		loadResourceDefine();
 	}
 
@@ -42,7 +45,7 @@ public class MyBatisInvocationSecurityMetadataSourceService implements FilterInv
 					auths.add(auth);
 				}
 				
-				System.out.println("power=" + auths);
+				logger.debug("power=" + auths);
 				resourceMap.put(resource.getResource(), auths);
 			}
 		}
@@ -50,7 +53,7 @@ public class MyBatisInvocationSecurityMetadataSourceService implements FilterInv
 
 	public Collection<ConfigAttribute> getAttributes(Object object) throws IllegalArgumentException {
 		String requestUrl = ((FilterInvocation) object).getRequestUrl();
-		System.out.println("requestUrl is " + requestUrl);
+		logger.debug("requestUrl is " + requestUrl);
 
 		int firstQuestionMarkIndex = requestUrl.indexOf("?");
 

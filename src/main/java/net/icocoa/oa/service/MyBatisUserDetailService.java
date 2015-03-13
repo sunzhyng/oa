@@ -6,6 +6,7 @@ import java.util.List;
 import net.icocoa.oa.dao.IUserInfoDao;
 import net.icocoa.oa.po.SysUser;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.security.core.GrantedAuthority;
@@ -17,6 +18,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 public class MyBatisUserDetailService implements UserDetailsService {
+	private Logger logger = Logger.getLogger(this.getClass());
+
 	@Autowired
 	private IUserInfoDao userInfoDao;
 
@@ -24,7 +27,7 @@ public class MyBatisUserDetailService implements UserDetailsService {
 	private UserCache userCache;
 
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException, DataAccessException {
-		System.out.println("username is :" + username);
+		logger.debug("username is :" + username);
 
 		SysUser user = this.userInfoDao.findByName(username);
 		List<GrantedAuthority> auths = new ArrayList<GrantedAuthority>();

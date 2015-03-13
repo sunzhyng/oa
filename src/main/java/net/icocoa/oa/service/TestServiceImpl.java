@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import net.icocoa.oa.dao.TestDao;
 import net.icocoa.oa.po.Test;
 
-@Service("testService")
+@Service
 public class TestServiceImpl implements TestService {
 
 	@Autowired

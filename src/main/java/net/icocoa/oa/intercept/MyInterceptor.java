@@ -1,4 +1,4 @@
-package net.icocoa.oa;
+package net.icocoa.oa.intercept;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

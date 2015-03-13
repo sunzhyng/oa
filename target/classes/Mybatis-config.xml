@@ -5,8 +5,12 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="net.icocoa.oa.po.Test" alias="Test" />
+		<typeAlias type="net.icocoa.oa.po.SysResource" alias="SysResource" />
+		<typeAlias type="net.icocoa.oa.po.SysUser" alias="SysUser" />
 	</typeAliases>
 	<mappers>
 		<mapper resource="net/icocoa/oa/mapper/testMapper.xml" />
+		<mapper resource="net/icocoa/oa/mapper/SysResourceMapper.xml" />
+		<mapper resource="net/icocoa/oa/mapper/SysUserMapper.xml" />
 	</mappers>
 </configuration>

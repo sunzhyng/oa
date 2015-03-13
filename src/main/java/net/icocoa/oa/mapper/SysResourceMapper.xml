@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+    <!DOCTYPE mapper PUBLIC   
+        "-//mybatis.org//DTD Mapper 3.0//EN"  
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.icocoa.oa.dao.IResourceDao">
+	<resultMap type="SysResource" id="SysResource">
+		<id property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="type" column="type" />
+		<result property="resource" column="resource" />
+		<result property="description" column="description" />
+	</resultMap>
+	<select id="findAll" parameterType="List" resultMap="SysResource">
+		select * from sys_resource
+	</select>
+	<select id="loadRoleByResource" resultType="String">
+		select ro.name as role
+		from sys_role ro join sys_resource_role rr on ro.id=rr.role_id 
+		join sys_resource re on re.id=rr.resc_id
+		where re.resource=#{url}
+	</select>
+	
+</mapper>  

@@ -9,12 +9,12 @@
             http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
 	<mvc:annotation-driven />
-	<context:component-scan base-package="net.icocoa.oa.controller,net.icocoa.oa.service" />
+	<context:component-scan base-package="net.icocoa.oa.controller,net.icocoa.oa.service,net.icocoa.oa.dao" />
 	
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/*" />
-			<bean class="net.icocoa.oa.MyInterceptor"></bean>
+			<bean class="net.icocoa.oa.intercept.MyInterceptor"></bean>
 		</mvc:interceptor>
 	</mvc:interceptors>
 	

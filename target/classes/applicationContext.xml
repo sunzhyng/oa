@@ -27,6 +27,20 @@
 		<property name="basePackage" value="net.icocoa.oa.dao" />
 	</bean>
 
+	<!-- cache -->
+	<bean id="userCache"
+		class="org.springframework.security.core.userdetails.cache.EhCacheBasedUserCache">
+		<property name="cache" ref="userEhCache" />
+	</bean>
+
+	<bean id="userEhCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheName" value="userCache" />
+		<property name="cacheManager" ref="cacheManager" />
+	</bean>
+
+	<bean id="cacheManager"
+		class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean" />
+
 	<!-- transaction -->
 	<bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

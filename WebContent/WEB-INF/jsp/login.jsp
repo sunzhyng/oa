@@ -36,6 +36,12 @@
 				</td>
 			</tr>
 			<tr>
+				<td colspan='2'>
+					<input id="_spring_security_remember_me" name="_spring_security_remember_me" type="checkbox" value="true"/> Remember
+				</td>
+			</tr>
+			
+			<tr>
 				<td colspan='2'><input name="submit" type="submit"
 					value="submit" />
 				</td>
